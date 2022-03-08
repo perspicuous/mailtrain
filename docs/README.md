@@ -234,12 +234,12 @@ Edit [mailtrain.conf](setup/mailtrain.conf) (update application folder) and copy
 
 The (experimental) Mailtrain Subscription Widget allows you to embed your sign-up forms on your website. To embed a Widget, you need to:
 
-Enable cross-origin resource sharing in your `server/config/local.yaml` file (you may need to create it if it doesn't exist) and whitelist your site:
+Enable cross-origin resource sharing in your `server/config/local.yaml` file (you may need to create it if it doesn't exist) and whitelist your site. If you use docker, the right file to change is `server/config/production.yaml`:
 
 ```
 cors:
   # Allow subscription widgets to be embedded
-  origins=['https://www.example.com']
+  origins: ['https://www.example.com']
 ```
 
 Embed the widget code on your website using the untrusted endpoint:
